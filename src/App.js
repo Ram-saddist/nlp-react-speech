@@ -30,9 +30,10 @@ const App = () => {
     //post action which we speak and getting response 
     function sendSpeech(){
         if(transcript!==""){
-            axios.post("http://aiassit-env.eba-mm9jyr3f.eu-north-1.elasticbeanstalk.com/getdata",{
+            axios.post("https://eswarcodegnan.pythonanywhere.com/getdata",{
                 transcript:transcript
             }).then((res)=>{
+                console.log(res.data)
                 setBackendResponse(res.data.data)
                 setBackendQueryResponse(res.data.query)
             })
@@ -52,8 +53,8 @@ const App = () => {
                 {/* the speech we are hearing is displayed in here */}
                 <div className="main-content">
                     <span>{transcript}</span>
-                    <span className='backendResponse'>{backendResponse}</span>
                     <span className='backendResponse'>{backendQueryResponse}</span>
+                    <span className='backendResponse'>{backendResponse}</span>
                 </div>
             </div>
         </>
