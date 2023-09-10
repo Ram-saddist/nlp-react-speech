@@ -2,7 +2,6 @@ import axios from 'axios'
 import Chatbot from './Chatbot.png'
 import "./App.css"
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import { useSpeechSynthesis } from "react-speech-kit";
 import {useState} from "react";
 import SpeackComponent from './SpeackComponent';
 
@@ -12,9 +11,7 @@ const App = () => {
     const [isResultActive,setIsResultActive]=useState(false)
     const [backendResponse,setBackendResponse]=useState("")
     const [backendQueryResponse,setBackendQueryResponse]=useState("")
-    const [count,setCount]=useState()
-    const [speakResult,setSpeakResult]=useState(false)
-    const { speak } = useSpeechSynthesis();
+    const [count,setCount]=useState(0)
     //transcript is the text carrying one
     const { transcript,listening, browserSupportsSpeechRecognition } = useSpeechRecognition();
 
@@ -40,7 +37,6 @@ const App = () => {
             axios.post("https://eswarnandivada.pythonanywhere.com/getdata",{
                 transcript:transcript
             }).then((res)=>{
-                console.log(res.data)
                 setBackendResponse(res.data.data)
                 setBackendQueryResponse(res.data.query)
                 setCount(res.data.count)
@@ -63,7 +59,7 @@ const App = () => {
                 <div className="main-content">
                     <span>{transcript}</span>
                 </div>
-                
+                <SpeackComponent count={count}/>
                 <div style={{display:isResultActive ? 'block' : 'none'}} className='result'>
                     <span className='backendResponse'>{backendQueryResponse}</span>
                     <span className='backendResponse'>{backendResponse}</span>
