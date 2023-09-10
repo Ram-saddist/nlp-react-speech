@@ -43,7 +43,7 @@ const App = () => {
                 console.log(res.data)
                 setBackendResponse(res.data.data)
                 setBackendQueryResponse(res.data.query)
-                setCount(10)
+                setCount(res.data.count)
                 setIsResultActive(true)
             })
         }
@@ -63,7 +63,7 @@ const App = () => {
                 <div className="main-content">
                     <span>{transcript}</span>
                 </div>
-               
+                {isResultActive ? <SpeackComponent count={count}/> : null}
                 <div style={{display:isResultActive ? 'block' : 'none'}} className='result'>
                     <span className='backendResponse'>{backendQueryResponse}</span>
                     <span className='backendResponse'>{backendResponse}</span>

@@ -94,19 +94,23 @@ body {
   .bot-image{
     width:24vw
   }
+  .container{
+    width:75vw
+  }
   .title{
     font-size: 24px;
   }
   .main-content,.result{
-    width:50vw ;
+    width:60vw ;
   }
 }
 
 @media screen and (max-width: 768px) {
   .container {
     margin-top: 20px;
-    width:100vw
+    width:100vw !important
   }
+
 
   .bot-image{
     width:25vw
@@ -119,12 +123,7 @@ body {
   .main-content,.result {
     font-size: 16px;
     word-spacing: normal;
-  }
-
-  .btn-style>button {
-    padding: 12px 28px;
-    font-size: 16px;
-    margin-top: -70px;
+    width:60vw ;
   }
 }
 
@@ -133,8 +132,18 @@ body {
   .title{
     font-size: 15px;
   }
+  .click{
+    font-size: 1rem;
+  }
+  .btn-close{
+    right:12%;
+    font-size: 1rem;
+  }
+
+
   .main-content,.result{
     margin-top: 5%;
     font-size: 14px;
+    width:90vw ;
   }
 }
