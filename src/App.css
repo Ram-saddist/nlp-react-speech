@@ -18,17 +18,19 @@ body {
   align-items: center;
   align-self: center;
   background: rgb(255 255 255);
+  min-height: 100vh;
+  background-size: cover;
+  background-image: url("https://www.europarl.europa.eu/resources/library/images/20230607PHT95601/20230607PHT95601_original.jpg");
 }
 
 
 .container{
   padding: 30px;
-  margin-top: 40px;
   width:50vw
 }
 
 .title{
-  color: rgb(43 45 56);
+  color: white;
   text-align: center;
   font-size: 40px;
   font-family: "Merriweather", serif;
@@ -45,21 +47,38 @@ body {
   position: absolute;
   top:15%;
   right:20%;
+  color: white;
   font-weight: bold;
   font-size: 1.4rem;
 }
 
-.main-content {
+.main-content,.result {
   max-width: 50rem;
   width: 100%;
-  min-height: 60px;
+  min-height: 50px;
   height: auto;
-  padding: 18px 18px 60px 18px;
+  padding: 18px 18px 40px 18px;
   resize: none;
   box-shadow: 0 12px 48px 0px rgb(109 117 141 / 20%);
   background: rgb(255 255 255);
   border: 0.5px solid rgb(231 233 245);
   border-radius: 16px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.click{
+  color: white;
+  text-align:center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+.result {
+  margin-top: 40px;
+  display: none;
+  padding:0px 18px 20px 18px;
 }
 
 .backendResponse{
@@ -68,12 +87,7 @@ body {
   margin-top: 40px;
 }
 
-.main-content {
-  font-size: 18px;
-  letter-spacing: 1px;
-  word-spacing: 2px;
-  line-height: 1.6;
-}
+
 
 
 @media screen and (max-width: 992px) {
@@ -83,7 +97,7 @@ body {
   .title{
     font-size: 24px;
   }
-  .main-content{
+  .main-content,.result{
     width:50vw ;
   }
 }
@@ -102,7 +116,7 @@ body {
     font-size: 28px;
   }
 
-  .main-content {
+  .main-content,.result {
     font-size: 16px;
     word-spacing: normal;
   }
@@ -119,7 +133,7 @@ body {
   .title{
     font-size: 15px;
   }
-  .main-content{
+  .main-content,.result{
     margin-top: 5%;
     font-size: 14px;
   }
