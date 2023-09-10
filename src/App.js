@@ -3,8 +3,8 @@ import Chatbot from './Chatbot.png'
 import "./App.css"
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { useSpeechSynthesis } from "react-speech-kit";
-import {useState,useEffect} from "react";
-
+import {useState} from "react";
+import SpeackComponent from './SpeackComponent';
 
 const App = () => {   
     
@@ -12,6 +12,7 @@ const App = () => {
     const [isResultActive,setIsResultActive]=useState(false)
     const [backendResponse,setBackendResponse]=useState("")
     const [backendQueryResponse,setBackendQueryResponse]=useState("")
+    const [count,setCount]=useState()
     const [speakResult,setSpeakResult]=useState(false)
     const { speak } = useSpeechSynthesis();
     //transcript is the text carrying one
@@ -42,6 +43,7 @@ const App = () => {
                 console.log(res.data)
                 setBackendResponse(res.data.data)
                 setBackendQueryResponse(res.data.query)
+                setCount(10)
                 setIsResultActive(true)
             })
         }
@@ -60,8 +62,8 @@ const App = () => {
                 {/* the speech we are hearing is displayed in here */}
                 <div className="main-content">
                     <span>{transcript}</span>
-                    
                 </div>
+               
                 <div style={{display:isResultActive ? 'block' : 'none'}} className='result'>
                     <span className='backendResponse'>{backendQueryResponse}</span>
                     <span className='backendResponse'>{backendResponse}</span>
