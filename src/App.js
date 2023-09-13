@@ -10,6 +10,11 @@ import SpeackComponent from './SpeackComponent';
 const App = () => {   
     const { speak } = useSpeechSynthesis();   
     
+    useEffect(() => {
+    
+            speak({ text:`This is Code gnan  bot. I am ready to answer questions` });
+    
+    },[]);
     const [isActive, setIsActive] = useState(false);
     const [isResultActive,setIsResultActive]=useState(false)
     const [backendResponse,setBackendResponse]=useState("")
