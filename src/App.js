@@ -1,11 +1,14 @@
 import axios from 'axios'
 import Chatbot from './Chatbot.png'
+import hi from './hi.gif'
 import "./App.css"
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import {useState} from "react";
+import { useSpeechSynthesis } from "react-speech-kit";
+import {useState,useEffect} from "react";
 import SpeackComponent from './SpeackComponent';
 
 const App = () => {   
+    const { speak } = useSpeechSynthesis();   
     
     const [isActive, setIsActive] = useState(false);
     const [isResultActive,setIsResultActive]=useState(false)
@@ -47,7 +50,7 @@ const App = () => {
     return(
         <>
             <div className='bot'>
-                <img className='bot-image'  src={Chatbot}/>
+                <img className='bot-image'  src={hi}/>
                 <p className='click' onClick={startListening}>Click here</p>
                 <span className='btn-close' style={{display:isActive ? 'block' : 'none',cursor:"pointer"}} onClick={handleClick}>X</span>
             </div>

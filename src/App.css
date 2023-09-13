@@ -21,6 +21,7 @@ body {
   min-height: 100vh;
   background-size: cover;
   background-image: url("background.jpg");
+  background-attachment: fixed;
 }
 
 
@@ -41,7 +42,8 @@ body {
   right:0%;
 }
 .bot-image{
-  width:15vw
+  width:15vw;
+  mix-blend-mode: color-burn;
 }
 .btn-close{
   position: absolute;
@@ -62,7 +64,7 @@ body {
   box-shadow: 0 12px 48px 0px rgb(109 117 141 / 20%);
   background: rgb(255 255 255);
   border: 0.5px solid rgb(231 233 245);
-  border-radius: 16px;
+  border-radius: 0px 16px 16px 16px;
   font-size: 18px;
   letter-spacing: 1px;
   word-spacing: 2px;
@@ -79,6 +81,8 @@ body {
   margin-top: 40px;
   display: none;
   padding:0px 18px 20px 18px;
+  background-color: #d9fdd3;
+  border-radius: 16px 0px 40px 66px;
 }
 
 .backendResponse{
@@ -129,6 +133,7 @@ body {
 
 /*mobile view*/
 @media screen and (max-width: 426px) {
+  
   .title{
     font-size: 15px;
   }
